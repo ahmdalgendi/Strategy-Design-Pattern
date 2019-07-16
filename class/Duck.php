@@ -1,17 +1,22 @@
 <?php
-require '../interface/FlyBehavior.php';
 
-require '../interface/QuckBehavior.php';
+require_once 'interface/QuckBehavior.php';
+require_once 'interface/FlyBehavior.php';
+
 abstract class Duck{
-    protected $flyBehavior = new FlyBehavior;
-    protected $quackBehavior = new QuackBehavior;
+
+    
+    function __construct(){
+        $this->flyBehavior = new FlyBehavior;
+        $this->quackBehavior = new QuackBehavior;
+    }
     public abstract function display();
     public function quack(){
-        $quackBehavior.quack();
+        $this->quackBehavior.quack();
     }
     
     public function fly(){
-        $flyBehavior.fly();
+        $this->flyBehavior.fly();
     }
     
 

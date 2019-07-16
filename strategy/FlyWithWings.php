@@ -1,5 +1,5 @@
 <?php
-require 'interface/FlyBehavior.php';
+
 
 class FlyWithWings  implements FlyBehavior
 {
